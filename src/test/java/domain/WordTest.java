@@ -37,6 +37,21 @@ public class WordTest {
         assertScoreForLetter(score, 1, Letter.PART_CORRECT);
         assertScoreForLetter(score, 2, Letter.CORRECT);
     }
+
+    @Test
+    void reportsAllCorrect() {
+        var word = new Word("ARISE");
+        var score = word.guess("ARISE");
+        assertThat(score.allCorrect()).isTrue();
+    }
+
+    @Test
+    void reportsNotAllCorrect() {
+        var word = new Word("ARISE");
+        var score = word.guess("ARI*E");
+        assertThat(score.allCorrect()).isFalse();
+    }
+
     private void assertScoreForLetter(Score score, int position, Letter expected) {
         assertThat(score.letter(position)).isEqualTo(expected);
     }
