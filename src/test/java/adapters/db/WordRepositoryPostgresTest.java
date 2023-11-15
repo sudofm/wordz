@@ -42,4 +42,15 @@ public class WordRepositoryPostgresTest {
 
         assertThat(actual).isEqualTo("ARISE");
     }
+
+
+    @Test
+    @DataSet("adapters/data/threeWords.json")
+    void returnsHighestWordNumber() {
+        WordRepository repository = new WordRepositoryPostgres(dataSource);
+
+        int actual = repository.highestWordNumber();
+
+        assertThat(actual).isEqualTo(3);
+    }
 }
