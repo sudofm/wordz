@@ -23,13 +23,7 @@ public class WordRepositoryPostgresTest {
 
     @BeforeEach
     void setUpConnection() {
-        var ds = new PGSimpleDataSource();
-        ds.setServerNames(new String[]{"localhost"});
-        ds.setDatabaseName("wordzdb");
-        ds.setCurrentSchema("public");
-        ds.setUser("ciuser");
-        ds.setPassword("cipassword");
-        this.dataSource = ds;
+        this.dataSource = new PostgresTestDataSource();
     }
 
 

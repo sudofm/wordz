@@ -1,9 +1,11 @@
 package domain;
 
+import java.util.Optional;
+
 public interface GameRepository {
     void create(Game game);
 
-    Game fetchForPlayer(Player eq);
+    Optional<Game> fetchForPlayer(Player eq);
 
     void update(Game capture);
 }

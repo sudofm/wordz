@@ -15,7 +15,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class NewGameTest {
 
-    public static final Player PLAYER = new Player();
+    public static final Player PLAYER = new Player("player1");
     @Mock
     private GameRepository gameRepository;
     @Mock
@@ -42,7 +42,7 @@ public class NewGameTest {
     void selectsRandomWord() {
         givenWordToSelect("ABCDE");
 
-        var player = new Player();
+        var player = new Player("player1");
         wordz.newGame(player);
 
         Game game = getGameInRepository();

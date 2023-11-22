@@ -78,5 +78,32 @@
             <artifactId>jdbi3-core</artifactId>
             <version>3.34.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.vtence.molecule/molecule -->
+        <dependency>
+            <groupId>com.vtence.molecule</groupId>
+            <artifactId>molecule</artifactId>
+            <version>0.15.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.thorntail/undertow -->
+        <dependency>
+            <groupId>io.thorntail</groupId>
+            <artifactId>undertow</artifactId>
+            <version>2.7.0.Final</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+
     </dependencies>
 </project>

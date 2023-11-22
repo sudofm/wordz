@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class GuessTest {
-    private static final Player PLAYER = new Player();
+    private static final Player PLAYER = new Player("player1");
     private static final String CORRECT_WORD = "ARISE";
     private static final String WRONG_WORD = "RXXXX";
 
@@ -51,9 +51,9 @@ public class GuessTest {
 
     @Test
     void reportsGameOverOnCorrectGuess() {
-        var player = new Player();
+        var player = new Player("player1");
         Game game = new Game(player, "ARISE", 0);
-        when(gameRepository.fetchForPlayer(player)).thenReturn(game);
+        when(gameRepository.fetchForPlayer(player)).thenReturn(Optional.of(game));
         var wordz = new Wordz(gameRepository, wordRepository, randomNumbers);
 
         var guess = "ARISE";
@@ -101,8 +101,6 @@ public class GuessTest {
 
     private void givenGameInRepository(Game game) {
         when(gameRepository.fetchForPlayer(eq(PLAYER)))
-                .thenReturn(game);
+                .thenReturn(Optional.ofNullable(game));
     }
-
-
 }
