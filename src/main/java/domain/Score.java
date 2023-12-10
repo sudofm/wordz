@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Score {
@@ -42,5 +43,9 @@ public class Score {
                 .filter(letter -> letter == Letter.CORRECT)
                 .count();
         return totalCorrect == results.size();
+    }
+
+    public List<Letter> letters() {
+        return Collections.unmodifiableList(results);
     }
 }
